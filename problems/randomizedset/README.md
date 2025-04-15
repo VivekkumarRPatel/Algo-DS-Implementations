@@ -2,6 +2,7 @@
 
 🔁 RandomizedSet
 🧩 Problem Statement
+
 Design a data structure that supports the following operations in average O(1) time:
 
 RandomizedSet() – Initializes the data structure.
@@ -15,6 +16,7 @@ getRandom() – Returns a random element from the set. Each element should have 
 ⚠️ It’s guaranteed that getRandom() is only called when there is at least one element in the set.
 
 💡 **Approach**
+
 The challenge here is that we want all operations to be O(1) — especially getRandom() and remove(), which are usually more expensive in most data structures.
 
 So what do we need?
@@ -38,6 +40,7 @@ For remove, swap the target value with the last value in the list, update the ma
 For getRandom, just generate a random index and return the element at that index in the list.
 
 🤯 **Trickiest Part**
+
 The trickiest part of this problem is:
 
 Removing an element in O(1)
