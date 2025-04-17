@@ -2,6 +2,7 @@
 
 🔁 RandomizedSet
 🧩 Problem Statement
+
 Design a data structure that supports the following operations in average O(1) time:
 
 RandomizedSet() – Initializes the data structure.
@@ -14,7 +15,8 @@ getRandom() – Returns a random element from the set. Each element should have 
 
 ⚠️ It’s guaranteed that getRandom() is only called when there is at least one element in the set.
 
-💡 Approach
+💡 **Approach**
+
 The challenge here is that we want all operations to be O(1) — especially getRandom() and remove(), which are usually more expensive in most data structures.
 
 So what do we need?
@@ -25,7 +27,7 @@ To check if a value exists and to get its position quickly → use a HashMap.
 ✅ Fast Random Access
 To pick a random value in constant time → use a List (ArrayList).
 
-So the idea is:
+**So the idea is:**
 
 Use a List to store values (so we can get by index).
 
@@ -37,7 +39,8 @@ For remove, swap the target value with the last value in the list, update the ma
 
 For getRandom, just generate a random index and return the element at that index in the list.
 
-🤯 Trickiest Part
+🤯 **Trickiest Part**
+
 The trickiest part of this problem is:
 
 Removing an element in O(1)
@@ -46,7 +49,8 @@ Normally, removing an element from the middle of a list takes O(n) because of sh
 Returning a truly random element
 Since ArrayList supports access by index in O(1), we can generate a random index and return the value at that index — ensuring equal probability for each element.
 
-📚 What I Learned
+📚 **What I Learned**
+
 How to combine two data structures (HashMap + ArrayList) to leverage the strengths of both.
 
 The importance of designing around time complexity.
